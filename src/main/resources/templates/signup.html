@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="fragments/header :: header-css"></div>
+    <title>registration</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">SignUp !</div>
+                <div class="panel-body">
+                    <form th:object="${user}" method="post" th:action="@{'/signup'}">
+                        <div class="form-group">
+                            <input type="text" th:field="*{firstName}" class="form-control" placeholder="first name"
+                                   required>
+                            <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" th:field="*{lastName}" class="form-control" required
+                                   placeholder="last name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" th:field="*{email}" class="form-control" required placeholder="email">
+                            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" th:field="*{password}" class="form-control" required
+                                   placeholder="password">
+                            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">SignUp</button>
+                    </form>
+                    <br>
+                    <div th:if="${success_message !=''}" th:text="${success_message}" th:class="${success_class}"></div>
+                    <div th:if="${users_exists_message !=''}" th:text="${users_exists_message}" th:class="${warning_class}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
