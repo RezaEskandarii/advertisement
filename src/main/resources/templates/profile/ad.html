@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="fragments/profile :: header-css"></div>
+    <title>ads</title>
+</head>
+<body>
+<div th:replace="fragments/profile :: navbar"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form th:object="${houseAd}">
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{area}" placeholder="area">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" th:field="*{yearOfConstruction}"
+                           placeholder="year of construction">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{purpose}" placeholder="purpose">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{price}" placeholder="price">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{numberOfRooms}"
+                           placeholder="number of rooms">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{neighbourhood}"
+                           placeholder="neighbourhood">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{cityName}" placeholder="city name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{houseType}" placeholder="house type">
+                </div>
+                <div class="form-group">
+                            <textarea type="text" rows="4" class="form-control" th:field="*{description}"
+                                      placeholder="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="file" name="imagePath">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

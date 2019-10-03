@@ -7,6 +7,47 @@
 </head>
 <body>
 <div th:replace="fragments/profile :: navbar"></div>
-<h1> Profile </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <a th:href="@{'/profile/create-ad'}">
+                <div class="panel panel-success">
+                   <div class="panel-heading">
+                       <span class="glyphicon glyphicon-ok"></span>
+                   </div>
+                    <div class="panel-body">
+                        Create New Ad
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 ">
+            <a href="">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </div>
+                    <div class="panel-body">
+                        ManageAds
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </div>
+                    <div class="panel-body">
+                        ProfileSetting
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
