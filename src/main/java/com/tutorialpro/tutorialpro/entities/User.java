@@ -41,6 +41,8 @@ public class User {
     @OneToMany(mappedBy = "user")
     public List<Role> roleList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user" ,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    public List<HouseAd> houseAdList = new ArrayList<>();
     private boolean active;
 
     private String token;

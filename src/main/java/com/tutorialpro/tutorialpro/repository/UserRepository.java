@@ -15,6 +15,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     public User findByToken(String token);
 
+    public User findUserByUsername(String username);
+
     @Query("update User u set u.active=true where u.token=:token and u.id=:id")
     @Modifying
     @Transactional

@@ -10,45 +10,55 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <form th:object="${houseAd}">
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{area}" placeholder="area">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Create New Ad</div>
+                <div class="panel-body">
+                    <form method="post" th:action="@{'/profile/ads/create'}" th:object="${ad}"
+                          enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>area</label>
+                            <input class="form-control" th:field="*{area}">
+                        </div>
+                        <div class="form-group">
+                            <label>year of construction</label>
+                            <input class="form-control" th:field="*{yearOfConstruction}">
+                        </div>
+
+                        <div class="form-group">
+                            <label>house type</label>
+                            <input class="form-control" th:field="*{houseType}" placeholder="house type">
+                        </div>
+                        <div class="form-group">
+                            <label>city name</label>
+                            <input class="form-control" th:field="*{cityName}" placeholder="city name">
+                        </div>
+                        <div class="form-group">
+                            <label>neighbourhood</label>
+                            <input class="form-control" th:field="*{neighbourhood}" placeholder="neighbourhood">
+                        </div>
+                        <div class="form-group">
+                            <label>number of rooms</label>
+                            <input class="form-control" th:field="*{numberOfRooms}" placeholder="number of rooms">
+                        </div>
+                        <div class="form-group">
+                            <label>price</label>
+                            <input class="form-control" th:field="*{price}" placeholder="price">
+                        </div>
+                        <div class="form-group">
+                            <label>price</label>
+                            <input class="form-control" th:field="*{purpose}" placeholder="purpose">
+                        </div>
+                        <div class="form-group">
+                            <label>description</label>
+                            <textarea class="form-control" rows="4" th:field="*{description}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="image">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="date" class="form-control" th:field="*{yearOfConstruction}"
-                           placeholder="year of construction">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{purpose}" placeholder="purpose">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{price}" placeholder="price">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{numberOfRooms}"
-                           placeholder="number of rooms">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{neighbourhood}"
-                           placeholder="neighbourhood">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{cityName}" placeholder="city name">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{houseType}" placeholder="house type">
-                </div>
-                <div class="form-group">
-                            <textarea type="text" rows="4" class="form-control" th:field="*{description}"
-                                      placeholder="description"></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="file" name="imagePath">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary">Create</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

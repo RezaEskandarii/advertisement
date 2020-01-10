@@ -18,10 +18,10 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
                 crossorigin="anonymous"></script>
         <style>
-            a{
+            .nav-link{
                 color: #ffffff;
             }
-            a:hover{
+            .nav-link:hover{
                 color: tomato;
             }
         </style>
@@ -32,11 +32,11 @@
 <nav class="navbar navbar-dark bg-primary" th:fragment="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Home</a>
+            <a class="navbar-brand nav-link" href="#">Home</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">setting</a></li>
-            <li><a href="#">MyAds</a></li>
+            <li class="active"><a class=" nav-link" href="#">setting</a></li>
+            <li><a href="#" class=" nav-link">MyAds</a></li>
         </ul>
     </div>
 </nav>
