@@ -13,12 +13,13 @@ public class ActivationController {
 
     @Autowired
     UserRepository userRepository;
-
+    
     @GetMapping(value = "/activation/{token}")
     public String activeUserByToken(
             @PathVariable("token") String token
     ) {
         User user = userRepository.findByToken(token);
+        // update user
         if (user != null) {
             userRepository.activeUserByTokenAndId(token, user.getId());
         }
