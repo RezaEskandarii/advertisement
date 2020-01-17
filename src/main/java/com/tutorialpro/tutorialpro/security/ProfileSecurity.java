@@ -35,6 +35,7 @@ public class ProfileSecurity extends WebSecurityConfigurerAdapter {
         ).passwordEncoder(new BCryptPasswordEncoder());
     }
 
+    // protect profile routes
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
