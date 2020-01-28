@@ -14,6 +14,7 @@ public class ActivationController {
     @Autowired
     UserRepository userRepository;
     
+    
     @GetMapping(value = "/activation/{token}")
     public String activeUserByToken(
             @PathVariable("token") String token
