@@ -38,4 +38,7 @@ public class FrontController {
         return "index";
     }
 
+    public String demo(){
+        return "demo";   
+    }
 }
