@@ -29,8 +29,10 @@ public class EmailService {
                     mimeMessageHelper.setSubject(subject);
                     mimeMessageHelper.setText(body);
                 } catch (MessagingException e) {
+                    // TODO: store logs in file
                     System.out.println(e.getMessage());
                 } finally {
+                    // send mail
                     javaMailSender.send(mimeMessage);
                 }
             }
