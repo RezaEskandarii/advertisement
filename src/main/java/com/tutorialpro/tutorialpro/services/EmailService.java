@@ -16,6 +16,12 @@ public class EmailService {
     @Autowired
     JavaMailSender javaMailSender;
 
+    /**
+     * send email
+     * @param to
+     * @param subject
+     * @param body
+     */
     public void send(String to, String subject, String body) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper
